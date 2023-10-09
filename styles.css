@@ -1,0 +1,85 @@
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    /* border: 1px solid black; */
+    padding: 8px;
+    text-align: center;
+}
+
+/* th {
+    background-color:#4CAF50
+}
+
+td {
+    background-color:aquamarine
+} */
+
+/* Search Bar */
+.search-container {
+    margin: 2px;
+}
+
+.search-container form {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #f1f1f1;
+    padding: 5px 10px;
+    border-radius: 15px;
+}
+
+.search-container input[type="text"] {
+    width: 100%;
+    padding: 5px;
+    background-color: #f1f1f1;
+    border: none;
+    outline: none;
+}
+
+.search-container button {
+    background-color: #f1f1f1;
+    color: gray;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Profile Dropdown */
+.dropdown {
+    position: relative;
+    display: inline-block;
+    color: white;
+
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: white;
+    min-width: 30px;
+    right: -25px;
+    width: 125px;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 24px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: white;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .dropbtn {
+    background-color: #f1f1f1;
+}
