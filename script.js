@@ -8,7 +8,7 @@ const boxesPerRow = Math.floor(window.innerWidth / 100); // Assuming each box is
 const boxesPerColumn = 2;
 
 // Total number of boxes
-const totalBoxes = boxesPerRow * boxesPerColumn;
+const totalBoxes = boxesPerRow * boxesPerRow;
 
 // Generate boxes dynamically
 for (let i = 1; i <= totalBoxes; i++) {
