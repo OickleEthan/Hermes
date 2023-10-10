@@ -136,6 +136,7 @@ td {
     padding: 20px;
     border: 1px solid #888;
     width: 80%;
+    max-width: 600px; /* Set maximum width to 1000px */
 }
 
 /* Close button */
