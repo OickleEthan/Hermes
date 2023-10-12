@@ -35,34 +35,40 @@ document.getElementById('moreResultsBtn').addEventListener('click', function() {
 });
 
 
-// Add event listener to the "Log in" button to show the modal
-const loginButton = document.getElementById('LogInButton');
-const SignUpButton = document.getElementById('SignUpButton');
-const createAccountButton = document.getElementById('createAccountButton');
-const LoginModal = document.getElementById('loginModal');
-const closeBtn = document.querySelector('.close');
+window.addEventListener('load', function() {
+    const loginButton = document.getElementById('LogInButton');
+    const SignUpButton = document.getElementById('SignUpButton');
+    const createAccountButton = document.getElementById('createAccountButton');
+    const LoginModal = document.getElementById('loginModal');
+    const SignUpModal = document.getElementById('SignUpModal');
+    const closeBtn = document.querySelectorAll('.close');
 
-loginButton.addEventListener('click', function(event) {
-    event.preventDefault(); // Prevents the default behavior of the link
-    LoginModal.style.display = 'block'; // Display the modal
+    loginButton.addEventListener('click', function(event) {
+        event.preventDefault();
+        LoginModal.style.display = 'block';
+    });
+
+    SignUpButton.addEventListener('click', function(event) {
+        event.preventDefault();
+        SignUpModal.style.display = 'block';
+    });
+
+    // Loop through all close buttons and attach event listener to each one
+    closeBtn.forEach(function(btn) {
+        btn.addEventListener('click', function() {
+            LoginModal.style.display = 'none';
+            SignUpModal.style.display = 'none';
+        });
+    });
+
+    window.addEventListener('click', function(event) {
+        if (event.target == LoginModal || event.target == SignUpModal) {
+            LoginModal.style.display = 'none';
+            SignUpModal.style.display = 'none';
+        }
+    });
 });
 
-SignUpButton.addEventListener('click', function(event) {
-    event.preventDefault(); // Prevents the default behavior of the link
-    LoginModal.style.display = 'block'; // Display the modal
-});
-
-// Close the modal when the close button is clicked
-closeBtn.addEventListener('click', function() {
-    LoginModal.style.display = 'none'; // Hide the modal
-});
-
-// Close the modal when the user clicks anywhere outside the modal
-window.addEventListener('click', function(event) {
-    if (event.target == LoginModal) {
-        LoginModal.style.display = 'none'; // Hide the LoginModal
-    }
-});
 
 const passwordField = document.getElementById('passwordField');
 const showPasswordCheckbox = document.getElementById('showPassword');
@@ -79,5 +85,41 @@ showPasswordCheckbox.addEventListener('change', function() {
     } else {
         eyeIcon.classList.remove('fa-eye');
         eyeIcon.classList.add('fa-eye-slash');
+    }
+});
+
+const signUpPasswordField = document.getElementById('signUpPasswordField');
+const signUpShowPasswordCheckbox = document.getElementById('showSignUpPassword');
+const signUpEyeIcon = document.getElementById('signUpEyeIcon');
+const confirmPasswordField = document.getElementById('confirmPasswordField');
+const signUpButton = document.getElementById('signUpButton');
+
+signUpShowPasswordCheckbox.addEventListener('change', function() {
+    const passwordFieldType = signUpShowPasswordCheckbox.checked ? 'text' : 'password';
+    signUpPasswordField.type = confirmPasswordField.type = passwordFieldType;
+    
+    // Toggle eye icon style
+    if (signUpShowPasswordCheckbox.checked) {
+        signUpEyeIcon.classList.remove('fa-eye-slash');
+        signUpEyeIcon.classList.add('fa-eye');
+    } else {
+        signUpEyeIcon.classList.remove('fa-eye');
+        signUpEyeIcon.classList.add('fa-eye-slash');
+    }
+});
+
+signUpButton.addEventListener('click', function() {
+    const password = signUpPasswordField.value;
+    const confirmPassword = confirmPasswordField.value;
+
+    if (password === confirmPassword && password.length > 0) {
+        // Passwords match, proceed with sign up logic
+        // You can add your sign up code here
+        console.log('Passwords match. Proceed with sign up logic.');
+    } else {
+        // Passwords do not match or one of the fields is empty
+        // Display an error message in the modal
+        errorMessageElement.textContent = 'Passwords do not match or one of the fields is empty.';
+        errorMessageElement.style.display = 'block';
     }
 });

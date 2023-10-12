@@ -296,6 +296,23 @@ td {
     background-color: #45a049; /* Darker green color on hover */
 }
 
+.sign-up-button {
+    width: 100%;
+    background-color: greenyellow; /* Green color */
+    color: black;
+    padding: 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    text-align: center;
+    margin-top: 15px; /* Add margin between the Google button and Sign In button */
+}
+
+.sign-up-button:hover {
+    background-color: #45a049; /* Darker green color on hover */
+}
+
 /* Style the "Create an account" button */
 .create-account-button {
     color: greenyellow;
