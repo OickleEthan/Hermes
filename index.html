@@ -27,14 +27,13 @@
                         <img src="assets/outline_account_circle_black_24dp.png" alt="Image" width="25" height="25">
                     </button>
                     <div class="dropdown-content">
-                        <a class="menu-item" href="#">Log in</a>
-                        <a class="menu-item" href="#">Sign up</a>
+                        <a class="menu-item" href="#" id="LogInButton">Log in</a>
+                        <a class="menu-item" href="#" id="SignUpButton">Sign Up</a>
                         <hr class="breakpoint">
                         <a class="menu-item" href="#">Register a Service</a>
                         <a class="menu-item" href="#">Help</a>
                     </div>
                 </div>
-                <!-- Add this HTML for the modal login form -->
                 <div id="loginModal" class="modal">
                     <div class="modal-content">
                         <div class="modal-header">
@@ -42,7 +41,7 @@
                             <span class="close">&times;</span>
                         </div>
                         <h2>Welcome back!</h2>
-                        <p>Sign in to your Google account</p>
+                        <p>Log in to your Google account</p>
                         <button class="google-button">Sign in with Google</button>
                         <div class="breakpoint">
                             <div class="line"></div>
@@ -61,13 +60,13 @@
                             <input type="checkbox" id="rememberDevice">
                             <label for="rememberDevice">Remember this device</label>
                         </div>
-                        <button class="sign-in-button">Sign In</button>
+                        <button class="sign-in-button">Log In</button>
                         <div class="create-account-text">
-                            <p>Don't have an account yet? <button class="create-account-button">Create an account.</button></p>
+                            <p>Don't have an account yet? <button class="create-account-button" id="createAccountButton">Create an account.</button></p>
                         </div>                        
                     </div>
                 </div>
-                
+                </div>
             </th>
         </tr>
         <tr>

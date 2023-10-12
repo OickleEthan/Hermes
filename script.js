@@ -36,27 +36,33 @@ document.getElementById('moreResultsBtn').addEventListener('click', function() {
 
 
 // Add event listener to the "Log in" button to show the modal
-const loginButton = document.querySelector('.menu-item[href="#"]');
-const modal = document.getElementById('loginModal');
+const loginButton = document.getElementById('LogInButton');
+const SignUpButton = document.getElementById('SignUpButton');
+const createAccountButton = document.getElementById('createAccountButton');
+const LoginModal = document.getElementById('loginModal');
 const closeBtn = document.querySelector('.close');
 
 loginButton.addEventListener('click', function(event) {
     event.preventDefault(); // Prevents the default behavior of the link
-    modal.style.display = 'block'; // Display the modal
+    LoginModal.style.display = 'block'; // Display the modal
+});
+
+SignUpButton.addEventListener('click', function(event) {
+    event.preventDefault(); // Prevents the default behavior of the link
+    LoginModal.style.display = 'block'; // Display the modal
 });
 
 // Close the modal when the close button is clicked
 closeBtn.addEventListener('click', function() {
-    modal.style.display = 'none'; // Hide the modal
+    LoginModal.style.display = 'none'; // Hide the modal
 });
 
 // Close the modal when the user clicks anywhere outside the modal
 window.addEventListener('click', function(event) {
-    if (event.target == modal) {
-        modal.style.display = 'none'; // Hide the modal
+    if (event.target == LoginModal) {
+        LoginModal.style.display = 'none'; // Hide the LoginModal
     }
 });
-
 
 const passwordField = document.getElementById('passwordField');
 const showPasswordCheckbox = document.getElementById('showPassword');
