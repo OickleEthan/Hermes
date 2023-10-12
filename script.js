@@ -108,18 +108,24 @@ signUpShowPasswordCheckbox.addEventListener('change', function() {
     }
 });
 
-signUpButton.addEventListener('click', function() {
-    const password = signUpPasswordField.value;
-    const confirmPassword = confirmPasswordField.value;
+// Get the email, password, and login button elements
+var emailField = document.getElementById('emailField');
+var loginButton = document.getElementById('loginButton');
 
-    if (password === confirmPassword && password.length > 0) {
-        // Passwords match, proceed with sign up logic
-        // You can add your sign up code here
-        console.log('Passwords match. Proceed with sign up logic.');
-    } else {
-        // Passwords do not match or one of the fields is empty
-        // Display an error message in the modal
-        errorMessageElement.textContent = 'Passwords do not match or one of the fields is empty.';
-        errorMessageElement.style.display = 'block';
+// Function to validate the form fields
+function validateForm() {
+    // Check if email and password fields are not empty
+    if (emailField.value.trim() === '' || passwordField.value.trim() === '') {
+        // Display an alert or any other error message as needed
+        alert('Please fill out both email and password fields.');
+        return false; // Prevent form submission
+    }
+    return true; // Allow form submission
+}
+
+// Attach the validateForm function to the login button's click event
+loginButton.addEventListener('click', function(event) {
+    if (!validateForm()) {
+        event.preventDefault(); // Prevent form submission if validation fails
     }
 });
