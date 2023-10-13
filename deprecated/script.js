@@ -129,7 +129,3 @@ loginButton.addEventListener('click', function(event) {
         event.preventDefault(); // Prevent form submission if validation fails
     }
 });
-
-signUpButton.addEventListener("click", function() {
-    window.location.href = "signup.html";
-});
