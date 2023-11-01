@@ -89,7 +89,7 @@
                     </div>
                 </div>
                 </div>
-                <div id="SignUpModal" class="modal">
+                <div id="SignUpModal" class="modal" id="signupForm">
                     <div class="modal-content">
                         <div class="modal-header">
                             <img src="assets/logo.ico" alt="Logo" class="logo">
@@ -123,7 +123,7 @@
                         </form>
                         <div class="error-message" id="errorMessage"></div>
                         <div class="create-account-text">
-                            <p>Don't have an account yet? <button class="create-account-button" id="createAccountButton">Create an account.</button></p>
+                            <p>Already have an account? <button class="create-account-button" id="LogInModalButton">Log in</button></p>
                         </div>                        
                     </div>
                 </div>

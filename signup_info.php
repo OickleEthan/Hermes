@@ -3,9 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="signup_styles.css">
     <title>Additional Information</title>
 </head>
 <body>
+    <button type="button" onclick="window.location.href='index.php'">Hermes</button>
     <h2>Enter Additional Information</h2>
     <form action="info_handler.php" method="POST">
         <label for="first_name">First Name:</label>

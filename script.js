@@ -133,3 +133,73 @@ loginButton.addEventListener('click', function(event) {
 signUpButton.addEventListener("click", function() {
     window.location.href = "signup.html";
 });
+
+// Get a reference to the "Create an account" button
+var createAccountButton = document.getElementById("createAccountButton");
+
+// Get a reference to the SignUpModal
+var signUpModal = document.getElementById("SignUpModal");
+
+// Add a click event listener to the button
+createAccountButton.addEventListener("click", function () {
+  signUpModal.style.display = "block"; // Display the SignUpModal
+});
+
+// You can also add code to close the modal when the close button (×) is clicked
+var closeModalButton = signUpModal.querySelector(".close");
+closeModalButton.addEventListener("click", function () {
+  signUpModal.style.display = "none"; // Close the SignUpModal
+});
+
+// Get a reference to the "Log in" button inside the SignUpModal
+var logInModalButton = document.getElementById("LogInModalButton");
+
+// Get a reference to the LogInModal
+var logInModal = document.getElementById("loginModal");
+
+// Add a click event listener to the "Log in" button inside the SignUpModal
+logInModalButton.addEventListener("click", function () {
+  logInModal.style.display = "block"; // Display the LogInModal
+  signUpModal.style.display = "none"; // Hide the SignUpModal if it's open
+});
+
+// You can also add code to close the LogInModal when the close button (×) is clicked
+var closeModalButton = logInModal.querySelector(".close");
+closeModalButton.addEventListener("click", function () {
+  logInModal.style.display = "none"; // Close the LogInModal
+});
+
+// Get references to form elements and error message in SignUpModal
+var signUpForm = document.getElementById("signupForm");
+var emailSignUpField = document.getElementById("emailSignUp");
+// var signUpPasswordField = document.getElementById("signUpPasswordField");
+// var confirmPasswordField = document.getElementById("confirmPasswordField");
+var errorMessage = document.getElementById("errorMessage");
+
+// Function to validate the SignUp form fields
+function validateSignUpForm() {
+    // Reset previous error message
+    errorMessage.textContent = "";
+
+    // Check if email, password, and confirm password fields are not empty
+    if (emailSignUpField.value.trim() === '' || signUpPasswordField.value.trim() === '' || confirmPasswordField.value.trim() === '') {
+        errorMessage.textContent = "Please fill in all required fields.";
+        return false; // Prevent form submission
+    }
+
+    // Check if password and confirm password fields match
+    if (signUpPasswordField.value !== confirmPasswordField.value) {
+        errorMessage.textContent = "Password and Confirm Password do not match.";
+        return false; // Prevent form submission
+    }
+
+    return true; // Allow form submission if all checks pass
+}
+
+// Attach the validateSignUpForm function to the SignUp form's submit event
+signUpForm.addEventListener("submit", function(event) {
+    if (!validateSignUpForm()) {
+        event.preventDefault(); // Prevent form submission if validation fails
+    }
+});
+
