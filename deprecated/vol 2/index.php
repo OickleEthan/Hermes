@@ -11,13 +11,12 @@
     <title>Hermes</title>
     <link rel="shortcut icon" href="assets/logo.ico" />
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="account_styles.css">
 </head>
 <body>
     <table>
         <tr>
             <th colspan="2">
-                <button type="button" class="hermes" onclick="window.location.href='index.php'">Hermes</button>
+                <button type="button" class="hermes">Hermes</button>
             </th>
             <th colspan="2">
                 <div class="search-container">
@@ -34,23 +33,23 @@
                     </button>
                     <div class="dropdown-content">
                         <?php if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true) { ?>
-                            <a class="menu-item" href="#" id="MessagesButton">Messages</a>                                                          <!-- TODO: Future -->
-                            <a class="menu-item" href="#" id="NotificationsButton">Notifications</a>                                                <!-- TODO: Future -->
-                            <a class="menu-item" href="#" id="WorkButton">Work</a>                                                                  <!-- TODO: Future -->
-                            <a class="menu-item" href="#" id="WishListButton">Wish List</a>                                                         <!-- TODO: Future -->
+                            <a class="menu-item" href="#" id="MessagesButton">Messages</a>
+                            <a class="menu-item" href="#" id="NotificationsButton">Notifications</a>
+                            <a class="menu-item" href="#" id="WorkButton">Work</a>
+                            <a class="menu-item" href="#" id="WishListButton">Wish List</a>
                             <hr class="breakpoint">
-                            <a class="menu-item" href="account/account.php" id="AccountButton">Account</a>                                                  <!-- DONE -->
-                            <a class="menu-item" href="#" id="RequestServiceButton">Request a Service</a>                                           <!-- TODO: Future -->
-                            <a class="menu-item" href="register_service/registerService.php" id="RegisterServiceButton">Register a Service</a>      <!-- TODO: Future -->
+                            <a class="menu-item" href="#" id="AccountButton">Account</a>
+                            <a class="menu-item" href="#" id="ServiceButton">Request a Service</a>
+                            <a class="menu-item" href="#">Register a Service</a>
                             <hr class="breakpoint">
-                            <a class="menu-item" href="#">Help</a>                                                                                  <!-- TODO -->
-                            <a class="menu-item" href="logout_handler.php">Log out</a>                                                              <!-- DONE -->
+                            <a class="menu-item" href="#">Help</a>
+                            <a class="menu-item" href="logout_handler.php">Log out</a>
                         <?php } else { ?>
-                            <a class="menu-item" href="#" id="LogInButton">Log in</a>                                                               <!-- DONE -->
-                            <a class="menu-item" href="#" id="SignUpButton">Sign Up</a>                                                             <!-- DONE -->
+                            <a class="menu-item" href="#" id="LogInButton">Log in</a>
+                            <a class="menu-item" href="#" id="SignUpButton">Sign Up</a>
                             <hr class="breakpoint">
-                            <a class="menu-item" href="#" id="RegisterServiceButton">Register a Service</a>                                         <!-- TODO: Future -->
-                            <a class="menu-item" href="#" id="RegisterServiceButton">Help</a>                                                       <!-- TODO -->
+                            <a class="menu-item" href="#">Register a Service</a>
+                            <a class="menu-item" href="#">Help</a>
                         <?php } ?>
                 </div>
                 </div>
@@ -137,14 +136,14 @@
         </tr>
         <tr>
             <td colspan="6">
-                <div class="box-container">                                                                     <!-- TODO -->
+                <div class="box-container">
                     <!-- Boxes will be dynamically generated here -->
                 </div>
             </td>
         </tr>
         <tr>
             <td colspan="6">
-                <button id="moreResultsBtn">More Results</button>                                               <!-- DONE -->
+                <button id="moreResultsBtn">More Results</button>
             </td>
         </tr>
     </table>

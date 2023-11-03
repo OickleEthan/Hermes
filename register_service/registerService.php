@@ -1,23 +1,28 @@
+<!-- I'm going to give you some code. I want you to modify this code based on a description that I will give you.
+ Feel free to create any new files that you may need in order to complete the task. You may want to use CSS, 
+ JS, HTML, or php!  -->
+
 <?php
     session_start(); // Start the session to access session variables
-    include 'connection.php';
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hermes</title>
-    <link rel="shortcut icon" href="assets/logo.ico" />
-    <link rel="stylesheet" href="styles.css">
+    <title>Register a service - Hermes</title>
+    <link rel="shortcut icon" href="../assets/logo.ico" />
+    <link rel="stylesheet" href="../styles.css">
     <link rel="stylesheet" href="account_styles.css">
 </head>
+
 <body>
     <table>
         <tr>
             <th colspan="2">
-                <button type="button" class="hermes" onclick="window.location.href='index.php'">Hermes</button>
+                <button type="button" class="hermes" onclick="window.location.href='../index.php'">Hermes</button>
             </th>
             <th colspan="2">
                 <div class="search-container">
@@ -30,27 +35,27 @@
             <th>
                 <div class="dropdown">
                     <button class="dropbtn">
-                        <img src="assets/outline_account_circle_black_24dp.png" alt="Image" width="25" height="25">
+                        <img src="../assets/outline_account_circle_black_24dp.png" alt="Image" width="25" height="25">
                     </button>
                     <div class="dropdown-content">
                         <?php if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true) { ?>
-                            <a class="menu-item" href="#" id="MessagesButton">Messages</a>                                                          <!-- TODO: Future -->
-                            <a class="menu-item" href="#" id="NotificationsButton">Notifications</a>                                                <!-- TODO: Future -->
-                            <a class="menu-item" href="#" id="WorkButton">Work</a>                                                                  <!-- TODO: Future -->
-                            <a class="menu-item" href="#" id="WishListButton">Wish List</a>                                                         <!-- TODO: Future -->
+                            <a class="menu-item" href="#" id="MessagesButton">Messages</a>
+                            <a class="menu-item" href="#" id="NotificationsButton">Notifications</a>
+                            <a class="menu-item" href="#" id="WorkButton">Work</a>
+                            <a class="menu-item" href="#" id="WishListButton">Wish List</a>
                             <hr class="breakpoint">
-                            <a class="menu-item" href="account/account.php" id="AccountButton">Account</a>                                                  <!-- DONE -->
-                            <a class="menu-item" href="#" id="RequestServiceButton">Request a Service</a>                                           <!-- TODO: Future -->
-                            <a class="menu-item" href="register_service/registerService.php" id="RegisterServiceButton">Register a Service</a>      <!-- TODO: Future -->
+                            <a class="menu-item" href="../account/account.php" id="AccountButton">Account</a>
+                            <a class="menu-item" href="#" id="ServiceButton">Request a Service</a>
+                            <a class="menu-item" href="#">Register a Service</a>
                             <hr class="breakpoint">
-                            <a class="menu-item" href="#">Help</a>                                                                                  <!-- TODO -->
-                            <a class="menu-item" href="logout_handler.php">Log out</a>                                                              <!-- DONE -->
+                            <a class="menu-item" href="#">Help</a>
+                            <a class="menu-item" href="logout_handler.php">Log out</a>
                         <?php } else { ?>
-                            <a class="menu-item" href="#" id="LogInButton">Log in</a>                                                               <!-- DONE -->
-                            <a class="menu-item" href="#" id="SignUpButton">Sign Up</a>                                                             <!-- DONE -->
+                            <a class="menu-item" href="#" id="LogInButton">Log in</a>
+                            <a class="menu-item" href="#" id="SignUpButton">Sign Up</a>
                             <hr class="breakpoint">
-                            <a class="menu-item" href="#" id="RegisterServiceButton">Register a Service</a>                                         <!-- TODO: Future -->
-                            <a class="menu-item" href="#" id="RegisterServiceButton">Help</a>                                                       <!-- TODO -->
+                            <a class="menu-item" href="#">Register a Service</a>
+                            <a class="menu-item" href="#">Help</a>
                         <?php } ?>
                 </div>
                 </div>
@@ -135,23 +140,8 @@
                 <div style="border-top: 1px solid rgb(190, 190, 190);"></div>
             </td>
         </tr>
-        <tr>
-            <td colspan="6">
-                <div class="box-container">                                                                     <!-- TODO -->
-                    <!-- Boxes will be dynamically generated here -->
-                </div>
-            </td>
-        </tr>
-        <tr>
-            <td colspan="6">
-                <button id="moreResultsBtn">More Results</button>                                               <!-- DONE -->
-            </td>
-        </tr>
     </table>
-    <?php
-    $conn->close();
-    ?>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <script src="script.js"></script>
+    <script src="account_script.js"></script>
 </body>
+
 </html>

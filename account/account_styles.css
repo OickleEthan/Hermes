@@ -1,0 +1,34 @@
+/* styles.css */
+.sidebar {
+    margin-top: 100px; /* Adjust margin-top based on the height of the header */
+    height: 100vh;
+    width: 200px; /* Set your desired width for the sidebar */
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: white;
+    border-right: 1px solid #ccc; /* Add a vertical line on the right side */
+}
+
+.account-options-container {
+    padding: 15px;
+}
+
+.account-option {
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+.account-option.selected {
+    background-color: greenyellow; /* Background color for the selected option */
+    color: black; /* Text color for the selected option */
+    font-weight: bold; /* Bold text for the selected option */
+    border-radius: 5px;
+}
+
+
+/* styles.css */
+.content {
+    margin-left: 220px; /* Adjust the margin-left based on the width of the sidebar */
+    padding: 20px;
+}
